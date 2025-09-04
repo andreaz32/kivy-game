@@ -1,0 +1,34 @@
+#:kivy 1.11.1
+
+<GameWidget>:
+    player: player_box
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'background.jpg'  # Opsional: tambahkan gambar background
+
+    Label:
+        text: f"Score: {root.score}"
+        font_size: '20sp'
+        top: root.top - 10
+        x: root.x + 10
+        color: 0,0,0,1
+
+    Label:
+        text: f"Time: {root.time_left}"
+        font_size: '20sp'
+        top: root.top - 10
+        right: root.right - 10
+        color: 0,0,0,1
+
+    Widget:
+        id: player_box
+        size: 50, 50
+        center: root.center
+        canvas:
+            Color:
+                rgba: 0,1,0,1  # Hijau
+            Rectangle:
+                pos: self.pos
+                size: self.size
